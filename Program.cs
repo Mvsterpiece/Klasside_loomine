@@ -20,14 +20,18 @@ namespace Klasside_loomine
 			Console.WriteLine(mees.Perenimi+" on "+mees.Vanus +" aastane mees");
 			mees.Tervitamine();
 
-			Inimene[] inimesed = new Inimene[5];
-			for (int i = 0; i < 5; i++)
+			Inimene[] inimesed = new Inimene[2];
+			for (int i = 0; i < 2; i++)
 			{
 				inimesed[i] = new Inimene();
-				Console.WriteLine("Mis on sinu nimi?");
+				Console.WriteLine("Mis on sinu eesnimi?");
+				inimesed[i].Eesnimi = Console.ReadLine();
+				Console.WriteLine("Mis on sinu perekonnanimi?");
 				inimesed[i].Perenimi = Console.ReadLine();
 				Console.WriteLine("Kui vana sa oled?");
 				inimesed[i].Vanus = int.Parse(Console.ReadLine());
+				Console.WriteLine("kui palju raha sa saad kuus?");
+				inimesed[i].Palk = int.Parse(Console.ReadLine());
 			}
 			foreach (Inimene inimene in inimesed)
 			{
