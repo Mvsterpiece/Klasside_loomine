@@ -13,11 +13,17 @@ namespace Klasside_loomine
 		public string staatus;
 		int vanus;
 		int palk;
+		Emakeel emakeel;
 		public string money;
 		public Inimene() { }
-		public Inimene(string Perenimi)
+		public Inimene(string Perenimi, Emakeel emakeel)
 		{
 			perenimi = Perenimi;
+			this.emakeel = emakeel;
+		}
+		public Emakeel Emakeel
+		{
+			get { return emakeel; }
 		}
 		public string Perenimi
 		{
@@ -34,15 +40,21 @@ namespace Klasside_loomine
 			set
 			{
 				vanus = value;
-				if (vanus<7)
+			}
+			get { return vanus; }
+		}
+		public string Staatus
+		{
+			get {
+				if (vanus < 7)
 				{
 					staatus = "Laps";
 				}
-				else if (vanus<17)
+				else if (vanus < 17)
 				{
 					staatus = "koolilaps";
 				}
-				else if (vanus<24)
+				else if (vanus < 24)
 				{
 					staatus = "ülikoolilaps";
 				}
@@ -50,17 +62,26 @@ namespace Klasside_loomine
 				{
 					staatus = "tööline";
 				}
-			}
-			get { return vanus; }
-
-		}
-		public string Staatus
-		{
-			get { return staatus; }
+				return staatus; }
 		}
 		public void Tervitamine()
 		{
-			Console.WriteLine("Minu eesnimi on "+ eesnimi+" ja perekonnanimi "+perenimi);
+			if (perenimi!=null && eesnimi!=null)
+			{
+				Console.WriteLine("Minu eesnimi on {0} ja perekonnanimi {1} ", eesnimi, perenimi);
+			}
+			else if (perenimi==null && eesnimi != null)
+			{
+				Console.WriteLine("Minu perekonnanimi on"+perenimi);
+			}
+			else if (eesnimi==null && perenimi != null)
+			{
+				Console.WriteLine("Minu eesnimi on" + eesnimi);
+			}
+			else
+			{
+				Console.WriteLine("Tere! Sõber");
+			}
 			Console.WriteLine("Ma olen {0} aastat vana, olen {1}", vanus, staatus);
 			Console.WriteLine("Ja olen {0}",money);
 		}
@@ -91,6 +112,12 @@ namespace Klasside_loomine
 		public string Money
 		{
 			get { return money; }
+		}
+		public double Sootsiaalne()
+		{
+			double sots = 0;
+			sots = Palk * 0.33;
+			return sots;
 		}
 	}
 }

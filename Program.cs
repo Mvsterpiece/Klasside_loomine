@@ -10,7 +10,10 @@ namespace Klasside_loomine
 	{
 		static void Main(string[] args)
 		{
-			Inimene naine = new Inimene("Kask");
+			Inimene naine = new Inimene();
+			naine.Palk = 100;
+			double s = naine.Sootsiaalne();
+			Console.WriteLine(s);
 			Console.WriteLine("Kui vana sa oled?");
 			naine.Vanus = int.Parse(Console.ReadLine());
 			naine.Tervitamine();
@@ -37,8 +40,6 @@ namespace Klasside_loomine
 			{
 				inimene.Tervitamine();
 			}
-
-
 			Console.ReadLine();
 		}
 	}
