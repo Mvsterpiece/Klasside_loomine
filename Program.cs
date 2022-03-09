@@ -10,6 +10,24 @@ namespace Klasside_loomine
 	{
 		static void Main(string[] args)
 		{
+			Inimene i = new Opilane("Anna", "Tamm", "TARpe21");
+			i.Kes_ma_olen();
+			i.Tervitamine();
+			Inimene[] inim = new Inimene[4];
+			inim[0] = new Opetaja();
+			inim[0].Kes_ma_olen();
+			inim[1] = new Opilane();
+			inim[1].Kes_ma_olen();
+			inim[2] = new Opetaja();
+			inim[2].Kes_ma_olen();
+			inim[3] = new Opilane();
+			inim[3].Kes_ma_olen();
+
+			/*Opilane opilane = new Opilane();
+			opilane.Eesnimi = "Denis";
+			opilane.Perenimi = "Saiko";
+			opilane.Hinne = 4;
+			opilane.Informatsioon();
 			Inimene naine = new Inimene();
 			naine.Palk = 100;
 			double s = naine.Sootsiaalne();
@@ -39,7 +57,7 @@ namespace Klasside_loomine
 			foreach (Inimene inimene in inimesed)
 			{
 				inimene.Tervitamine();
-			}
+			}*/
 			Console.ReadLine();
 		}
 	}

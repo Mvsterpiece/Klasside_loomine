@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Klasside_loomine
 {
-	class Inimene
+	public abstract class Inimene
 	{
 		public string eesnimi;
 		public string perenimi;
@@ -20,6 +20,11 @@ namespace Klasside_loomine
 		{
 			perenimi = Perenimi;
 			this.emakeel = emakeel;
+		}
+		public Inimene(string Perenimi, string Eesnimi)
+		{
+			perenimi = Perenimi;
+			eesnimi = Eesnimi;
 		}
 		public Emakeel Emakeel
 		{
@@ -119,5 +124,6 @@ namespace Klasside_loomine
 			sots = Palk * 0.33;
 			return sots;
 		}
+		public abstract void Kes_ma_olen();
 	}
 }
